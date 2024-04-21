@@ -1,11 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Heaven</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <body>
-        <img  src="https://cdn1.vectorstock.com/i/1000x1000/24/20/climate-cloud-with-sun-vector-24982420.jpg">
-    </body>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            width: 70%;
+        }
+
+        .sidebar {
+            width: 30%;
+            background: #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .anime-list {
+            margin-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .anime-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .anime-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .anime-item .anime-description {
+            text-align: center;
+        }
+
+        .anime-item .anime-link {
+            margin-top: 10px;
+        }
+
+        .anime-item img.custom-height {
+            height: 250px; /* Customize the height of the image */
+            width: auto; /* Preserve aspect ratio */
+        }
+
+        .popular-week {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .popular-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .popular-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Anime Heaven</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Anime List</a></li>
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Ongoing</a></li>
+            <li><a href="#">Winter 2024</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section class="main">
+            <h2>Winter 2024 Anime</h2>
+            <div class="anime-list">
+                <div class="anime-item">
+                    <img src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2023/07/firefighter-daigo-new-key-visual-e1688237439528.jpg" alt="Anime 1" class="custom-height">
+                    <div class="anime-description">
+                        <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?ssjhb">Fire FIghter</a>
+                        <p>Description of Anime 1</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+ <img src="https://m.media-amazon.com/images/I/91OctEc247L._AC_UF1000,1000_QL80_.jpg" alt="Anime 1" class="custom-height">
+
+                    
+                    <div class="anime-description">
+                         <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?10g6d"> RAGANA CRIMSON</a>
+
+                        <p>Description of Anime 2</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/1763e5d2f62ccdd9a51c5ce5dd206ddc.jpe" alt="Anime 1" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 3</h3>
+                        <p>Description of Anime 3</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="virtual_url4.jpg" alt="Anime 4" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 4</h3>
+                        <p>Description of Anime 4</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="virtual_url5.jpg" alt="Anime 5" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 5</h3>
+                        <p>Description of Anime 5</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="virtual_url6.jpg" alt="Anime 6" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 6</h3>
+                        <p>Description of Anime 6</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="virtual_url7.jpg" alt="Anime 7" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 7</h3>
+                        <p>Description of Anime 7</p>
+                    </div>
+                </div>
+                <div class="anime-item">
+                    <img src="virtual_url8.jpg" alt="Anime 8" class="custom-height">
+                    <div class="anime-description">
+                        <h3>Anime 8</h3>
+                        <p>Description of Anime 8</p>
+                    </div>
+                </div>
+                <!-- Add more anime items here -->
+            </div>
+        </section>
+        <aside class="sidebar">
+            <h3>Popular This Week</h3>
+            <div class="popular-week">
+                <div class="popular-item">
+                    <img src="animeA.jpg" alt="Anime A">
+                    <h3>Anime A</h3>
+                    <p>Description of Anime A</p>
+                </div>
+                <div class="popular-item">
+                    <img src="animeB.jpg" alt="Anime B">
+                    <h3>Anime B</h3>
+                    <p>Description of Anime B</p>
+                </div>
+                <div class="popular-item">
+                    <img src="animeC.jpg" alt="Anime C">
+                    <h3>Anime C</h3>
+                    <p>Description of Anime C</p>
+                </div>
+                <div class="popular-item">
+                    <img src="animeD.jpg" alt="Anime D">
+                    <h3>Anime D</h3>
+                    <p>Description of Anime D</p>
+                </div>
+                <div class="popular-item">
+                    <img src="animeE.jpg" alt="Anime E">
+                    <h3>Anime E</h3>
+                    <p>Description of Anime E</p>
+                </div>
+                <!-- You can add more popular items here -->
+            </div>
+        </aside>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Anime Heaven</p>
+    </footer>
 </body>
 </html>
