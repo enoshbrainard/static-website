@@ -1,293 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime Heaven</title>
     <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
 
-        nav {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
+      nav {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+      }
 
-        nav ul {
-            list-style-type: none;
-        }
+      nav ul {
+        list-style-type: none;
+      }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-        }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+      }
 
-        .main {
-            width: 70%;
-        }
+      .main {
+        width: 70%;
+      }
 
-        .sidebar {
-            width: 30%;
-            background: #ddd;
-            padding: 10px;
-            box-sizing: border-box;
-        }
+      .sidebar {
+        width: 30%;
+        background: #ddd;
+        padding: 10px;
+        box-sizing: border-box;
+      }
 
-        .anime-list {
-            margin-bottom: 20px;
-            overflow-y: auto;
-        }
+      .anime-list {
+        margin-bottom: 20px;
+        overflow-y: auto;
+      }
 
-        .anime-item {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      .anime-item {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-        .anime-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+      .anime-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
 
-        .anime-item .anime-description {
-            text-align: center;
-        }
+      .anime-item .anime-description {
+        text-align: center;
+      }
 
-        .anime-item .anime-link {
-            margin-top: 10px;
-        }
+      .anime-item .anime-link {
+        margin-top: 10px;
+      }
 
-        .anime-item img.custom-height {
-            height: 250px; /* Customize the height of the image */
-            width: auto; /* Preserve aspect ratio */
-        }
+      .anime-item img.custom-height {
+        height: 250px; /* Customize the height of the image */
+        width: auto; /* Preserve aspect ratio */
+      }
 
-        .popular-week {
-            max-height: 200px;
-            overflow-y: auto;
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+      .popular-week {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
 
-        .popular-item {
-            width: calc(50% - 20px);
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      .popular-item {
+        width: calc(50% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-        .popular-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+      .popular-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
 
-        .footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            clear: both;
-        }
+      .footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        clear: both;
+      }
 
-        .this {
-            height: 1px;
-            width: auto;
-        }
-.col{
-color:red;
-font-size:20px;
-}
+      .this {
+        height: 1px;
+        width: auto;
+      }
+      .col {
+        color: red;
+        font-size: 20px;
+      }
     </style>
-</head>
-<body>
-<header>
-    <h1>Anime World</h1>
-</header>
-<nav>
-    <ul>
+  </head>
+  <body>
+    <header>
+      <h1>Anime World</h1>
+    </header>
+    <nav>
+      <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Anime List</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Movies</a></li>
         <li><a href="#">Ongoing</a></li>
         <li><a href="#">Winter 2024</a></li>
-    </ul>
-</nav>
-<div class="container">
-    <section class="main">
+      </ul>
+    </nav>
+    <div class="container">
+      <section class="main">
         <h2>Winter 2024 Anime</h2>
         <div class="anime-list">
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BY2IyMDA0NGEtZjIyOS00NjU0LThlOTctODA0OTZmMDU2ZTMxXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?ssjhb">Fire FIghter</a>
-                    <p>Megumi no Daigo: Kyuukoku no Orange</p>
-<p class="col">Finished airing</p>
-                </div>
+          <div class="anime-item">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BY2IyMDA0NGEtZjIyOS00NjU0LThlOTctODA0OTZmMDU2ZTMxXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?ssjhb"
+                >Fire FIghter</a
+              >
+              <p>Megumi no Daigo: Kyuukoku no Orange</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/I/91OctEc247L._AC_UF1000,1000_QL80_.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?10g6d"> RAGANA CRIMSON</a>
-<p>-</p>
-                    <p class="col">Finished airing</p>
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://m.media-amazon.com/images/I/91OctEc247L._AC_UF1000,1000_QL80_.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?10g6d"
+              >
+                RAGANA CRIMSON</a
+              >
+              <p>-</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/1763e5d2f62ccdd9a51c5ce5dd206ddc.jpe" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?dvqfe"> BOttom-Tier Character Tomozaki 2ndStage</a>
-                    <p>Jaku-Chara Tomozaki-kun 2nd STAGE</p>
-<p class="col">Finished airing</p>
-
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/1763e5d2f62ccdd9a51c5ce5dd206ddc.jpe"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?dvqfe"
+              >
+                BOttom-Tier Character Tomozaki 2ndStage</a
+              >
+              <p>Jaku-Chara Tomozaki-kun 2nd STAGE</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BYWFlZDYwNmMtYjRlNC00ZmI2LWIxZWUtYjNiYzJlNDIwNjc0XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?4rb3h"> ISHURU</a>
-<p>-</p>
-                    <p class="col">Finished airing</p>
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYWFlZDYwNmMtYjRlNC00ZmI2LWIxZWUtYjNiYzJlNDIwNjc0XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?4rb3h"
+              >
+                ISHURU</a
+              >
+              <p>-</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://external-preview.redd.it/kingdom-season-5-new-visual-v0-Ueqwy0z9Oq78xWb_i6ncI3FapM8XzcvJXSibnrA_TSg.jpg?auto=webp&s=27feec720431ffd67b06c5c76b7968b1d7425ad3" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?3anfs"> KINGDOM 5</a>
-<p>-</p>
-                     <p class="col">Finished airing</p>
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://external-preview.redd.it/kingdom-season-5-new-visual-v0-Ueqwy0z9Oq78xWb_i6ncI3FapM8XzcvJXSibnrA_TSg.jpg?auto=webp&s=27feec720431ffd67b06c5c76b7968b1d7425ad3"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?3anfs"
+              >
+                KINGDOM 5</a
+              >
+              <p>-</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjA1YzhkNDktZmVjZi00YzgyLTlhZGEtNTQyYWRkMmQwMmJkXkEyXkFqcGdeQXVyMTUyNjc3NDQ4._V1_FMjpg_UX1000_.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?e756ae"> MR VILLAINS DAY OFF</a>
-                   <p> Kyuujitsu no Warumono-san</p>
- <p class="col">Finished airing</p>
-
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMjA1YzhkNDktZmVjZi00YzgyLTlhZGEtNTQyYWRkMmQwMmJkXkEyXkFqcGdeQXVyMTUyNjc3NDQ4._V1_FMjpg_UX1000_.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?e756ae"
+              >
+                MR VILLAINS DAY OFF</a
+              >
+              <p>Kyuujitsu no Warumono-san</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://cdn.myanimelist.net/images/anime/1368/140801.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?nxlet"> HIGH CARRD SEASON 2</a>
-                    <p>-</p>
-<p class="col">Finished airing</p>
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://cdn.myanimelist.net/images/anime/1368/140801.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?nxlet"
+              >
+                HIGH CARRD SEASON 2</a
+              >
+              <p>-</p>
+              <p class="col">Finished airing</p>
             </div>
-            <div class="anime-item">
-                <img src="https://m.media-amazon.com/images/M/MV5BY2IwNmIzNmEtNzIwYS00MjZhLThkOGUtNzM2YWE4NTA0YWFmXkEyXkFqcGdeQXVyMTI3NjAwMTA1._V1_FMjpg_UX1000_.jpg" alt="Anime 1" class="custom-height">
-                <div class="anime-description">
-                    <a  style="font-weight:bold" href="https://animeheaven.me/anime.php?exrth"> DOCTOR ELISE-LADY WITH LAMP</a>
-                    <p>Gekai Elise, Surgeon Elise</p>
-<p class="col">Finished airing</p>
-
-
-                </div>
+          </div>
+          <div class="anime-item">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BY2IwNmIzNmEtNzIwYS00MjZhLThkOGUtNzM2YWE4NTA0YWFmXkEyXkFqcGdeQXVyMTI3NjAwMTA1._V1_FMjpg_UX1000_.jpg"
+              alt="Anime 1"
+              class="custom-height"
+            />
+            <div class="anime-description">
+              <a
+                style="font-weight: bold"
+                href="https://animeheaven.me/anime.php?exrth"
+              >
+                DOCTOR ELISE-LADY WITH LAMP</a
+              >
+              <p>Gekai Elise, Surgeon Elise</p>
+              <p class="col">Finished airing</p>
             </div>
-                   </div>
-    </section>
-    <aside class="sidebar">
+          </div>
+        </div>
+      </section>
+      <aside class="sidebar">
         <h3>Popular This Week</h3>
         <div class="popular-week">
-            <div class="popular-item">
-                <img class="this" src="https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg" alt="Anime A">
-                 <a href="https://animeheaven.me/anime.php?1ht8d"> ONE PIECE</a>
-
-                
-            </div>
-            <div class="popular-item">
-                <img class="this" src="https://m.media-amazon.com/images/M/MV5BOTE4OGI2NzYtNzE4MC00NGJlLTgwZTItN2Y3OTljMzFhODllXkEyXkFqcGdeQXVyNjA5MDIyMzU@._V1_.jpg" alt="Anime B">
-                 <a href="https://animeheaven.me/anime.php?gc00x"> NEW GATE</a>
-
-                
-            </div>
-            <div class="popular-item">
-                <img class="this" src="https://m.media-amazon.com/images/I/81OYRZEQG7L._AC_UF1000,1000_QL80_.jpg" alt="Anime C">
-                                <a href="https://animeheaven.me/anime.php?hnqk1"> SOLO LEVELLING</a>
-
-
-            </div>
-            <div class="popular-item">
-                <img class="this" src="https://m.media-amazon.com/images/M/MV5BNzE3MmQ4ZjEtYmQxNC00MWJmLWJkMGItYWQwNTk2ZmJlZTgxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg" alt="Anime D">
-                <a href="https://animeheaven.me/anime.php?ymde2"> BLACK BUTLER</a>
-
-
-                
-            </div>
-            <div class="popular-item">
-                <img class="this" src="https://m.media-amazon.com/images/M/MV5BNTAzYTlkMWEtOTNjZC00ZDU0LWI5ODUtYTRmYzY0MTAzYWZlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg" alt="Anime E">
-                 <a href="https://animeheaven.me/anime.php?l1cen"> BLACK CLOVER</a>
-
-
-                
-            </div>
-            
+          <div class="popular-item">
+            <img
+              class="this"
+              src="https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg"
+              alt="Anime A"
+            />
+            <a href="https://animeheaven.me/anime.php?1ht8d"> ONE PIECE</a>
+          </div>
+          <div class="popular-item">
+            <img
+              class="this"
+              src="https://m.media-amazon.com/images/M/MV5BOTE4OGI2NzYtNzE4MC00NGJlLTgwZTItN2Y3OTljMzFhODllXkEyXkFqcGdeQXVyNjA5MDIyMzU@._V1_.jpg"
+              alt="Anime B"
+            />
+            <a href="https://animeheaven.me/anime.php?gc00x"> NEW GATE</a>
+          </div>
+          <div class="popular-item">
+            <img
+              class="this"
+              src="https://m.media-amazon.com/images/I/81OYRZEQG7L._AC_UF1000,1000_QL80_.jpg"
+              alt="Anime C"
+            />
+            <a href="https://animeheaven.me/anime.php?hnqk1"> SOLO LEVELLING</a>
+          </div>
+          <div class="popular-item">
+            <img
+              class="this"
+              src="https://m.media-amazon.com/images/M/MV5BNzE3MmQ4ZjEtYmQxNC00MWJmLWJkMGItYWQwNTk2ZmJlZTgxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
+              alt="Anime D"
+            />
+            <a href="https://animeheaven.me/anime.php?ymde2"> BLACK BUTLER</a>
+          </div>
+          <div class="popular-item">
+            <img
+              class="this"
+              src="https://m.media-amazon.com/images/M/MV5BNTAzYTlkMWEtOTNjZC00ZDU0LWI5ODUtYTRmYzY0MTAzYWZlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg"
+              alt="Anime E"
+            />
+            <a href="https://animeheaven.me/anime.php?l1cen"> BLACK CLOVER</a>
+          </div>
         </div>
-    </aside>
-</div>
-<footer class="footer">
-    <p>&copy; 2024 Anime WORLD</p>
-</footer>
-</body>
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Anime WORLD</p>
+    </footer>
+  </body>
 </html>
